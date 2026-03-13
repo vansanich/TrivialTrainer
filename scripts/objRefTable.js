@@ -114,7 +114,6 @@ self.C3_GetObjectRefTable = function () {
 		C3.Plugins.yagames_adaptivetext.Cnds.PickChildren,
 		C3.Plugins.NinePatch.Cnds.IsOnScreen,
 		C3.Plugins.NinePatch.Cnds.IsOutsideLayout,
-		C3.Plugins.LocalStorage.Acts.ClearStorage,
 		C3.Plugins.LocalStorage.Acts.CheckItemExists,
 		C3.Plugins.LocalStorage.Cnds.OnItemMissing,
 		C3.Plugins.AJAX.Acts.RequestFile,
