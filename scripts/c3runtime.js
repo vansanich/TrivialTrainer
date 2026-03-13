@@ -3192,8 +3192,23 @@ self.C3_ExpressionFuncs = [
 		p => {
 			const n0 = p._GetNode(0);
 			const n1 = p._GetNode(1);
-			const v2 = p._GetNode(2).GetVar();
-			return () => (and("[i]Химическая формула[/i]: ", n0.ExpObject(1, n1.ExpInstVar(), v2.GetValue())) + ".\n");
+			return () => (and("[i]Химическая формула[/i]: ", n0.ExpObject(1, n1.ExpInstVar(), 0)) + ".\n");
+		},
+		p => {
+			const n0 = p._GetNode(0);
+			const n1 = p._GetNode(1);
+			return () => (and("\n[i]Номенклатурное название[/i]: ", n0.ExpObject(2, n1.ExpInstVar(), 0)) + ".\n");
+		},
+		p => {
+			const n0 = p._GetNode(0);
+			const n1 = p._GetNode(1);
+			return () => and("\n[i]Тривиальные названия[/i]: ", n0.ExpObject(3, n1.ExpInstVar(), 0));
+		},
+		p => {
+			const n0 = p._GetNode(0);
+			const f1 = p._GetNode(1).GetBoundMethod();
+			const n2 = p._GetNode(2);
+			return () => and(", ", n0.ExpObject(f1(), n2.ExpInstVar(), 0));
 		},
 		p => {
 			const n0 = p._GetNode(0);
