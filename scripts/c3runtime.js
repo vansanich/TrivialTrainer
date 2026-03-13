@@ -2791,16 +2791,16 @@ self.C3_ExpressionFuncs = [
 			const v0 = p._GetNode(0).GetVar();
 			return () => v0.GetValue();
 		},
+		() => "",
 		p => {
 			const n0 = p._GetNode(0);
 			const v1 = p._GetNode(1).GetVar();
 			const v2 = p._GetNode(2).GetVar();
-			return () => n0.ExpObject(v1.GetValue(), v2.GetValue(), 0);
+			return () => n0.ExpObject(v1.GetValue(), v2.GetValue());
 		},
-		() => "",
 		p => {
 			const n0 = p._GetNode(0);
-			return () => n0.ExpObject();
+			return () => (n0.ExpObject() - 1);
 		},
 		() => "shuffle",
 		p => {
@@ -2808,13 +2808,11 @@ self.C3_ExpressionFuncs = [
 			const f1 = p._GetNode(1).GetBoundMethod();
 			return () => Math.round(f0(3, ((3 + f1(0)) - 1)));
 		},
+		() => -1,
 		p => {
 			const n0 = p._GetNode(0);
-			const v1 = p._GetNode(1).GetVar();
-			const v2 = p._GetNode(2).GetVar();
-			return () => n0.ExpObject(v1.GetValue(), v2.GetValue());
+			return () => n0.ExpObject();
 		},
-		() => -1,
 		p => {
 			const v0 = p._GetNode(0).GetVar();
 			return () => (10 - v0.GetValue());
@@ -2825,10 +2823,6 @@ self.C3_ExpressionFuncs = [
 			const v1 = p._GetNode(1).GetVar();
 			const v2 = p._GetNode(2).GetVar();
 			return () => add(n0.ExpObject(0, v1.GetValue(), 0), v2.GetValue());
-		},
-		p => {
-			const n0 = p._GetNode(0);
-			return () => (n0.ExpObject() - 1);
 		},
 		() => "end training",
 		p => {
@@ -2850,6 +2844,12 @@ self.C3_ExpressionFuncs = [
 			const f1 = p._GetNode(1).GetBoundMethod();
 			const v2 = p._GetNode(2).GetVar();
 			return () => f0(f1(1, (v2.GetValue() - 1)));
+		},
+		p => {
+			const n0 = p._GetNode(0);
+			const v1 = p._GetNode(1).GetVar();
+			const v2 = p._GetNode(2).GetVar();
+			return () => n0.ExpObject(v1.GetValue(), v2.GetValue(), 0);
 		},
 		() => "0",
 		p => {
@@ -3383,6 +3383,7 @@ self.C3_ExpressionFuncs = [
 		},
 		() => 169,
 		() => "stylesheet.css",
+		() => -2,
 		() => 120,
 		() => 166,
 		() => 127,
