@@ -2981,11 +2981,11 @@ self.C3_ExpressionFuncs = [
 		() => "NumQuestions",
 		() => 49,
 		() => 140,
+		() => 7,
 		() => "Error",
 		() => 143,
 		() => 133,
 		() => 135,
-		() => 7,
 		() => "Comparision",
 		() => "Error1",
 		() => 137,
@@ -3187,6 +3187,12 @@ self.C3_ExpressionFuncs = [
 			const n6 = p._GetNode(6);
 			const v7 = p._GetNode(7).GetVar();
 			return () => and((and((and((and("\n[i]Сила:[/i] ", n0.ExpObject(1, v1.GetValue(), 2)) + "\n[i]Цвет:[/i] "), n2.ExpObject(2, v3.GetValue(), 2)) + "\n[i]Запах:[/i] "), n4.ExpObject(3, v5.GetValue(), 2)) + "\n[i]Токсичность:[/i] "), n6.ExpObject(4, v7.GetValue(), 2));
+		},
+		p => {
+			const f0 = p._GetNode(0).GetBoundMethod();
+			const n1 = p._GetNode(1);
+			const n2 = p._GetNode(2);
+			return () => (and("\n\nНазвание(-я) выучено(-ны) на ", (f0(n1.ExpObject(0, n2.ExpInstVar(), 0)) * 10)) + "%");
 		},
 		() => 57,
 		p => {

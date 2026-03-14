@@ -150,6 +150,7 @@ self.C3_GetObjectRefTable = function () {
 		C3.Plugins.yagames_adaptivetext.Acts.Destroy,
 		C3.Plugins.yagames_adaptivetext.Acts.MoveToBottom,
 		C3.Plugins.Text.Acts.AppendText,
+		C3.Plugins.System.Exps.float,
 		C3.Plugins.NinePatch.Acts.SetHeight,
 		C3.Plugins.NinePatch.Acts.SetWidth,
 		C3.Plugins.Text.Exps.Width,
