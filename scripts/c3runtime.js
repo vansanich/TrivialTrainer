@@ -2763,10 +2763,7 @@ function or(l, r)
 }
 
 self.C3_ExpressionFuncs = [
-		() => 4,
-		() => 0,
 		() => 1,
-		() => 0.5,
 		() => 31,
 		() => "next question",
 		() => 2,
@@ -2777,6 +2774,8 @@ self.C3_ExpressionFuncs = [
 		},
 		() => "corr",
 		() => "incorr",
+		() => 0,
+		() => 4,
 		p => {
 			const f0 = p._GetNode(0).GetBoundMethod();
 			const v1 = p._GetNode(1).GetVar();
@@ -3042,6 +3041,7 @@ self.C3_ExpressionFuncs = [
 			const v2 = p._GetNode(2).GetVar();
 			return () => subtract(n0.ExpObject(0, v1.GetValue()), v2.GetValue());
 		},
+		() => 0.5,
 		() => "Запуск (старое)",
 		() => "inorganic",
 		() => "organic",
@@ -3068,6 +3068,16 @@ self.C3_ExpressionFuncs = [
 			const f1 = p._GetNode(1).GetBoundMethod();
 			const n2 = p._GetNode(2);
 			return () => ((v0.GetValue() - (f1(0) / 2)) + n2.ExpObject());
+		},
+		p => {
+			const n0 = p._GetNode(0);
+			const v1 = p._GetNode(1).GetVar();
+			return () => (n0.ExpObject() + v1.GetValue());
+		},
+		p => {
+			const n0 = p._GetNode(0);
+			const v1 = p._GetNode(1).GetVar();
+			return () => (n0.ExpObject() - v1.GetValue());
 		},
 		() => "Creating Buttons",
 		p => {
