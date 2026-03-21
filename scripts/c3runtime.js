@@ -3009,6 +3009,11 @@ self.C3_ExpressionFuncs = [
 		() => "shuffle buttons",
 		() => "choose number of correct answers",
 		() => 9,
+		p => {
+			const f0 = p._GetNode(0).GetBoundMethod();
+			const v1 = p._GetNode(1).GetVar();
+			return () => (f0() - v1.GetValue());
+		},
 		() => "choose correct answers",
 		() => "choose incorrect answers",
 		p => {
