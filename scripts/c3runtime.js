@@ -3010,11 +3010,6 @@ self.C3_ExpressionFuncs = [
 		() => "choose number of correct answers",
 		() => 9,
 		() => "choose correct answers",
-		p => {
-			const f0 = p._GetNode(0).GetBoundMethod();
-			const v1 = p._GetNode(1).GetVar();
-			return () => Math.round(f0(3, ((3 + v1.GetValue()) - 1)));
-		},
 		() => "choose incorrect answers",
 		p => {
 			const f0 = p._GetNode(0).GetBoundMethod();
